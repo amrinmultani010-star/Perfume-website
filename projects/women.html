@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Women's Perfume Collection</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #ffe6f0, #fff);
+  overflow-x: hidden;
+}
+.flower-animation {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+.petal {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, pink, transparent);
+  border-radius: 50%;
+  animation: fall 8s linear infinite;
+  opacity: 0.7;
+}
+@keyframes fall {
+  0% { transform: translateY(-50px) translateX(0); }
+  100% { transform: translateY(100vh) translateX(100px); opacity:0; }
+}
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+  color: #cc0066;
+  margin-bottom: 2rem;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.product {
+  background: white;
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.product:hover { transform: scale(1.03); }
+.product img { width: 100%; border-radius: 12px; object-fit: cover; }
+.product h3 { color: #99004d; margin: 0.5rem 0; }
+.product p { font-size: 0.9rem; color: #333; }
+.add-to-cart {
+  margin-top: 1rem;
+  display: block;
+  width: 100%;
+  background: #cc0066;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.add-to-cart:hover { background: #b30059; }
+#cart-link { position: fixed; top: 10px; right: 10px; font-size: 1.2rem; }
+#cart-link {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  background: crimson;       /* button color */
+  color: white;              /* text color */
+  border-radius: 50px;       /* pill shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 12px 20px;        /* more width for text + icon */
+  border: 2px solid white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+
+#cart-count {
+  display: inline-block;
+  background: black;         /* small circle for number */
+  color: white;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 8px;          /* space between Cart text and number */
+  text-align: center;
+  min-width: 22px;
+}
+</style>
+</head>
+<body>
+
+<!-- Cart icon -->
+<a href="cart.html" id="cart-link">
+  🛒 Cart (<span id="cart-count">0</span>)
+</a>
+
+<!-- Flower animation -->
+<div class="flower-animation"></div>
+<script>
+for (let i = 0; i < 30; i++) {
+  const petal = document.createElement("div");
+  petal.classList.add("petal");
+  petal.style.left = `${Math.random() * 100}vw`;
+  petal.style.animationDelay = `${Math.random() * 5}s`;
+  document.querySelector(".flower-animation").appendChild(petal);
+}
+</script>
+
+<div class="container">
+<h1>Women's Perfume Collection</h1>
+<div class="products">
+<div class="product">
+<img height="300px" src="Rose Bloom.jpg" alt="Perfume 1">
+<h3>Rose Bloom</h3>
+<p>A soft, romantic fragrance with notes of rose and jasmine.</p>
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+<div class="product">
+<img height="300px" src="Sunset Orchid.jpg" alt="Perfume 2">
+<h3>Sunset Orchid</h3>
+<p>Exotic and warm, with hints of vanilla and orchid petals.</p>
+ <button class="add-to-cart">Add to Cart</button>
+</div>
+<div class="product">
+<img height="300px" src="Fresh Dew.jpg" alt="Perfume 3">
+<h3>Fresh Dew</h3>
+<p>A refreshing blend of citrus and morning dew drops.</p>
+ <button class="add-to-cart">Add to Cart</button>
+</div>
+<div class="product">
+<img height="300px" src="Lavender Love.jpg" alt="Perfume 4">
+<h3>Lavender Love</h3>
+<p>Calm and cozy aroma with lavender and sandalwood.</p>
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+<div class="product">
+<img height="300px" src="Blossom Chic.jpg" alt="Perfume 5">
+<h3>Blossom Chic</h3>
+<p>Chic floral bouquet with a hint of musk and amber.</p>
+<button class="add-to-cart">Add to Cart</button>
+</div>
+<div class="product">
+<img height="300px" src="Crystal Mist.jpg" alt="Perfume 6">
+<h3>Crystal Mist</h3>
+<p>Light and breezy scent with aquatic floral notes.</p>
+<button class="add-to-cart">Add to Cart</button>
+</div>
+<div class="product">
+<img height="300px" src="Amber Whisper.jpg" alt="Perfume 7">
+<h3>Amber Whisper</h3>
+<p>Warm amber and vanilla mix with a sweet twist.</p>
+  <button class="add-to-cart">Add to Cart</button>
+</div>
+<div class="product">
+<img height="300px" src="Peony Passion.jpg" alt="Perfume 8">
+<h3>Peony Passion</h3>
+<p>Bright and happy floral scent with fresh peony petals.</p>
+ <button class="add-to-cart">Add to Cart</button>
+</div>
+<div class="product">
+<img height="300px" src="Twilight Garden.jpg" alt="Perfume 9">
+<h3>Twilight Garden</h3>
+<p>Mysterious notes of night-blooming flowers and spice.</p>
+<button class="add-to-cart">Add to Cart</button>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+ 
+ <script src="women.js"></script>
+
+</body>
+</html>
+</body>
+</html>

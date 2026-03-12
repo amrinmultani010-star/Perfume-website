@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Unisex Perfume Collection</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Segoe UI', sans-serif;
+  color:black;
+  min-height:100vh;
+  position:relative;
+  overflow-x:hidden;
+  background:#000;
+}
+
+/* Background lighting */
+.background-lights{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1,#fbc2eb);
+  background-size:600% 600%;
+  animation:gradientFlow 30s ease infinite;
+}
+
+/* glowing lights */
+.light{
+  position:absolute;
+  width:500px;
+  height:500px;
+  border-radius:50%;
+  filter:blur(150px);
+  opacity:0.4;
+  animation:pulseLight 10s infinite ease-in-out alternate;
+}
+
+.light1{
+  background-color:#ffffff;
+  top:20%;
+  left:10%;
+}
+
+.light2{
+  background-color:#00f0ff;
+  bottom:20%;
+  right:10%;
+}
+
+@keyframes gradientFlow{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+@keyframes pulseLight{
+  0%{transform:scale(1); opacity:0.25;}
+  100%{transform:scale(1.5); opacity:0.5;}
+}
+
+header{
+  text-align:center;
+  padding:3rem 1rem;
+}
+
+header h1{
+  font-size:3rem;
+  font-weight:bold;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  color:black;
+}
+
+/* product grid */
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:2rem;
+  padding:2rem;
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.product{
+  background:rgba(255,255,255,0.1);
+  backdrop-filter:blur(8px);
+  padding:1.5rem;
+  border-radius:15px;
+  text-align:center;
+  transition:transform 0.3s;
+}
+
+.product:hover{
+  transform:translateY(-5px);
+}
+
+.product h2{
+  font-size:1.5rem;
+  margin-bottom:0.5rem;
+  color:black;
+}
+
+.product p{
+  font-size:1rem;
+  margin-bottom:1rem;
+  color:black;
+}
+
+button{
+  background:white;
+  color:black;
+  padding:0.5rem 1rem;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:background 0.3s;
+}
+
+button:hover{
+  background:#ff69b4;
+  color:white;
+}
+
+#cart-link {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  background: crimson;       /* button color */
+  color: white;              /* text color */
+  border-radius: 50px;       /* pill shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 12px 20px;        /* more width for text + icon */
+  border: 2px solid white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+
+#cart-count {
+  display: inline-block;
+  background: black;         /* small circle for number */
+  color: white;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 8px;          /* space between Cart text and number */
+  text-align: center;
+  min-width: 22px;
+}
+</style>
+</head>
+
+<body>
+
+  <!-- Cart icon -->
+<a href="cart.html" id="cart-link">
+  🛒 Cart (<span id="cart-count">0</span>)
+</a>
+
+<!-- Background Lights -->
+<div class="background-lights">
+  <div class="light light1"></div>
+  <div class="light light2"></div>
+</div>
+
+<header>
+<h1>Unisex Perfume Collection</h1>
+</header>
+
+<section class="product-grid">
+
+<div class="product">
+<img src="Radiant Bloom.jpg" height="300px">
+<h2>Radiant Bloom</h2>
+<p>Floral meets citrus in a fresh unisex twist.</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="Velvet Sky.jpg" height="300px">
+<h2>Velvet Sky</h2>
+<p>Smooth, sensual aroma that suits everyone.</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="Golden Mist.jpg" height="300px">
+<h2>Golden Mist</h2>
+<p>Spicy, fresh fragrance for a bold statement.</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="Crystal Clear.jpg" height="300px">
+<h2>Crystal Clear</h2>
+<p>Elegant, light, and breezy for any occasion.</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="Midnight Dew.jpg" height="300px">
+<h2>Midnight Dew</h2>
+<p>Woody and musky blend for nighttime elegance.</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="Serenity Rain.jpg" height="300px">
+<h2>Serenity Rain</h2>
+<p>A refreshing, aquatic scent that soothes the senses.</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="Lavender Breeze.jpg" height="300px">
+<h2>Lavender Breeze</h2>
+<p>Relaxing floral fragrance with a fresh twist.</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="Autumn Spice.jpg" height="300px">
+<h2>Autumn Spice</h2>
+<p>Warm, cozy fragrance with hints of cinnamon.</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="Ocean Rush.jpg" height="300px">
+<h2>Ocean Rush</h2>
+<p>Invigorating oceanic scent for every adventure.</p>
+<button class="add-to-cart">Add to Cart</button>
+</div>
+
+</section>
+<script>
+
+  // Load cart from localStorage or initialize empty
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+// Update cart count display
+function updateCartCount() {
+  const cartDisplay = document.getElementById("cart-count");
+  if (cartDisplay) cartDisplay.textContent = cart.length;
+}
+
+updateCartCount();
+
+// Add click events to all "Add to Cart" buttons
+const buttons = document.querySelectorAll(".product button");
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    const product = button.parentElement;
+    const name = product.querySelector("h2").textContent; // match <h2> in your HTML
+    const price = 50; // you can set a default price or use data-price if you add it
+    const img = product.querySelector("img").src; // save image for cart display
+
+    cart.push({ name, price, img });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+  });
+});
+
+// Optional: navigate to cart.html if you click the cart
+document.getElementById("cart-link").addEventListener("click", () => {
+  window.location.href = "cart.html";
+});
+</script>
+</body>
+</html>

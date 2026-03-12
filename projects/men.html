@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Men's Collection</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background-color: black;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    padding: 2rem;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .background-smoke {
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    overflow:hidden;
+    z-index:-1;
+  }
+
+  .smoke {
+    position:absolute;
+    width:200%; height:200%;
+    border-radius:50%;
+    filter:blur(100px);
+    opacity:0.2;
+    animation:floatSmoke 60s infinite linear;
+  }
+
+  .smoke1 { background: radial-gradient(circle, red, transparent 70%); animation-delay:0s; top:-20%; left:-30%; }
+  .smoke2 { background: radial-gradient(circle, white, transparent 70%); animation-delay:15s; bottom:-20%; right:-30%; }
+
+  @keyframes floatSmoke {
+    0% { transform: translate(0,0) scale(1);}
+    50% { transform: translate(20%,20%) scale(1.2);}
+    100% { transform: translate(0,0) scale(1);}
+  }
+
+  header { text-align:center; margin-bottom:2rem; }
+  header h1 { font-size:3rem; letter-spacing:2px; text-transform:uppercase; color:#fff; }
+
+  .product-grid {
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:2rem;
+    max-width:1200px;
+    margin:0 auto;
+  }
+
+  .product {
+    background-color: rgba(255,255,255,0.05);
+    padding:1.5rem;
+    border-radius:10px;
+    transition: transform 0.3s ease, background-color 0.3s;
+    text-align:center;
+    border:1px solid rgba(255,255,255,0.1);
+  }
+
+  .product:hover {
+    transform:translateY(-5px);
+    background-color: rgba(255,255,255,0.1);
+    border-color: red;
+  }
+
+  .product img {
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:5px;
+    margin-bottom:1rem;
+  }
+
+  .product h2 { font-size:1.5rem; margin-bottom:0.5rem; text-transform:uppercase; }
+  .product p { font-size:1rem; margin-bottom:1rem; color:#ccc; }
+
+  .add-to-cart {
+    background-color:white;
+    color:black;
+    border:none;
+    width:100%;
+    display:block;
+    padding:0.7rem 1rem;
+    font-weight:bold;
+    border-radius:5px;
+    cursor:pointer;
+    transition:background 0.3s,color 0.3s;
+    text-transform:uppercase;
+  }
+
+  .add-to-cart:hover { background-color:crimson; color:white; }
+
+  @media(max-width:992px){ .product-grid { grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:600px){ .product-grid { grid-template-columns:1fr; } }
+
+  .cart-icon {
+    position: fixed;
+    top:25px; right:25px;
+    font-size:28px;
+    font-weight:bold;
+    color:white;
+    cursor:pointer;
+    background:red;
+    padding:12px 18px;
+    border-radius:50px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.25);
+    border:2px solid white;
+    z-index:10;
+  }
+
+  #cart-count{
+    background:black;
+    color:white;
+    border-radius:50%;
+    padding:3px 9px;
+    font-size:14px;
+    margin-left:6px;
+    font-weight:bold;
+  }
+
+</style>
+</head>
+
+<body>
+
+<a href="cart.html" class="cart-icon">
+  🛒 <span id="cart-count">0</span>
+</a>
+<!-- Smoke background -->
+<div class="background-smoke">
+  <div class="smoke smoke1"></div>
+  <div class="smoke smoke2"></div>
+</div>
+
+<header>
+  <h1>Men's Fragrance Collection</h1>
+</header>
+
+<section class="product-grid">
+
+  <div class="product">
+    <img src="bloodnoir.jpg" alt="Bold Noir">
+    <h2>Bold Noir</h2>
+    <p>Dark, intense and unforgettable. Perfect for evening wear.</p>
+    <button class="add-to-cart" data-name="Bold Noir" data-price="40">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="Urban Musk.jpg" alt="Urban Musk">
+    <h2>Urban Musk</h2>
+    <p>Warm tones with a modern twist. A city-ready signature scent.</p>
+    <button class="add-to-cart" data-name="Urban Musk" data-price="35">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="Spice Trail.jpg" alt="Spice Trail">
+    <h2>Spice Trail</h2>
+    <p>Notes of cinnamon and sandalwood for bold personalities.</p>
+    <button class="add-to-cart" data-name="Spice Trail" data-price="38">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="Fresh Ember.jpg" alt="Fresh Ember">
+    <h2>Fresh Ember</h2>
+    <p>Cool citrus with a smoky finish. Energize your mornings.</p>
+    <button class="add-to-cart" data-name="Fresh Ember" data-price="30">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="steel.jpg" alt="Steel Pulse">
+    <h2>Steel Pulse</h2>
+    <p>Clean, sharp, and commanding. Your go-to daily wear.</p>
+    <button class="add-to-cart" data-name="Steel Pulse" data-price="32">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="Midnight Ride.jpg" alt="Midnight Ride">
+    <h2>Midnight Ride</h2>
+    <p>Deep tones of leather and night-blooming flowers.</p>
+    <button class="add-to-cart" data-name="Midnight Ride" data-price="45">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="Iron Wood.jpg" alt="Iron Wood">
+    <h2>Iron Wood</h2>
+    <p>Earthy, strong and grounded. Inspired by wild forests.</p>
+    <button class="add-to-cart" data-name="Iron Wood" data-price="42">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="Echo Mist.jpg" alt="Echo Mist">
+    <h2>Echo Mist</h2>
+    <p>A whisper of elegance with hints of musk and ozone.</p>
+    <button class="add-to-cart" data-name="Echo Mist" data-price="33">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="thunder.jpg" alt="Thunder Drift">
+    <h2>Thunder Drift</h2>
+    <p>Powerful aroma with undertones of stormy woods.</p>
+    <button class="add-to-cart" data-name="Thunder Drift" data-price="50">Add to Cart</button>
+  </div>
+
+</section>
+
+<!-- main.js logic -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  function updateCartCount() {
+    const cartDisplay = document.getElementById("cart-count");
+    if (cartDisplay) cartDisplay.textContent = cart.length;
+  }
+
+  updateCartCount();
+
+  const buttons = document.querySelectorAll(".add-to-cart");
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const name = button.getAttribute("data-name") || button.parentElement.querySelector("h2").textContent;
+      const price = Number(button.getAttribute("data-price") || 0);
+
+      cart.push({ name, price });
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      updateCartCount();
+    });
+  });
+});
+</script>
+
+</body>
+</html>
+
